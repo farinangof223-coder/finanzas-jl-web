@@ -9,7 +9,6 @@
             --primary-color: #2ecc71; /* Verde éxito */
             --dark-color: #2c3e50;
             --light-bg: #f4f7f6;
-            --paypal-color: #003087;
             --pse-color: #ff6b00;
         }
 
@@ -76,6 +75,13 @@
             font-weight: normal;
         }
 
+        /* Contenedor del botón de PayPal para centrarlo */
+        .paypal-container-wrapper {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
         .btn-payment {
             color: white;
             padding: 15px 30px;
@@ -92,10 +98,6 @@
         .btn-payment:hover {
             transform: translateY(-2px);
             opacity: 0.9;
-        }
-
-        .btn-paypal {
-            background-color: var(--paypal-color);
         }
 
         .btn-pse {
@@ -147,10 +149,12 @@
         <div class="pricing-box">
             <div class="price">Adquiere la Versión Pro<br><span>Pago único (Acceso de por vida)</span></div>
             
-            <!-- REEMPLAZA EL '#' POR TU LINK REAL DE PAYPAL -->
-            <a href="#" target="_blank" class="btn-payment btn-paypal">Pagar con PayPal (USD)</a>
+            <!-- NUEVO CONTENEDOR INTEGRADO DE PAYPAL -->
+            <div class="paypal-container-wrapper">
+                <div id="paypal-container-JDEDSETF847PQ"></div>
+            </div>
             
-            <!-- REEMPLAZA EL '#' POR TU LINK REAL DE EPAYCO/WOMPI (PSE) -->
+            <!-- REEMPLAZA EL '#' POR TU LINK REAL DE EPAYCO/WOMPI/BOLD (PSE) -->
             <a href="#" target="_blank" class="btn-payment btn-pse">Pagar con PSE (Colombia)</a>
             
             <p style="font-size: 0.85rem; margin: 15px 0 0 0; color: #95a5a6;">🔒 Compra 100% segura. Tras el pago, recibirás el enlace de descarga directa del instalador APK.</p>
@@ -171,6 +175,16 @@
             <p>&copy; 2026 Mi Finanzas Pro. Distribución directa e independiente.</p>
         </div>
     </div>
+
+    <!-- SCRIPT GENERAL DEL SDK DE PAYPAL -->
+    <script src="https://paypal.com"></script>
+    
+    <!-- RENDERIZADO DEL BOTÓN ESPECÍFICO DEL USUARIO -->
+    <script>
+      paypal.HostedButtons({
+        hostedButtonId: "JDEDSETF847PQ",
+      }).render("#paypal-container-JDEDSETF847PQ")
+    </script>
 
 </body>
 </html>
