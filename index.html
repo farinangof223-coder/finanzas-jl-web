@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Finanzas Pro - Toma el control de tu dinero</title>
+    
+    <!-- CARGAMOS EL SCRIPT PRINCIPAL DE PAYPAL PRIMERO PARA EVITAR EL ERROR DE NO DEFINIDO -->
+    <script src="https://paypal.com"></script>
+
     <style>
         :root {
-            --primary-color: #2ecc71; /* Verde éxito */
+            --primary-color: #2ecc71;
             --dark-color: #2c3e50;
             --light-bg: #f4f7f6;
             --pse-color: #ff6b00;
@@ -53,7 +57,6 @@
             margin-bottom: 30px;
         }
 
-        /* Caja de Precios y Compra */
         .pricing-box {
             background: white;
             padding: 30px;
@@ -75,11 +78,11 @@
             font-weight: normal;
         }
 
-        /* Contenedor del botón de PayPal para centrarlo */
         .paypal-container-wrapper {
             margin: 20px 0;
             display: flex;
             justify-content: center;
+            min-height: 50px; /* Espacio reservado para que cargue el botón */
         }
 
         .btn-payment {
@@ -139,22 +142,20 @@
 <body>
 
     <div class="container">
-        <!-- Tu logo subido a GitHub -->
         <img src="logo.png" alt="Mi Finanzas Pro Logo" class="logo">
 
         <h1>Mi Finanzas Pro</h1>
         <p>La herramienta definitiva para organizar tus gastos, ahorrar más y alcanzar tus metas financieras con seguridad y privacidad.</p>
 
-        <!-- Bloque de Venta Directa -->
         <div class="pricing-box">
             <div class="price">Adquiere la Versión Pro<br><span>Pago único (Acceso de por vida)</span></div>
             
-            <!-- CONTENEDOR INTEGRADO DE TU BOTÓN DE PAYPAL -->
+            <!-- CONTENEDOR DEL BOTÓN DE PAYPAL -->
             <div class="paypal-container-wrapper">
                 <div id="paypal-container-Q3BFSCX229V7G"></div>
             </div>
             
-            <!-- REEMPLAZA EL '#' POR TU LINK REAL DE EPAYCO/WOMPI/BOLD (PSE) -->
+            <!-- ENLACE TEMPORAL DE PSE -->
             <a href="#" target="_blank" class="btn-payment btn-pse">Pagar con PSE (Colombia)</a>
             
             <p style="font-size: 0.85rem; margin: 15px 0 0 0; color: #95a5a6;">🔒 Compra 100% segura. Tras el pago, recibirás el enlace de descarga directa del instalador APK.</p>
@@ -176,16 +177,18 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE PAYPAL CON TU CLIENT ID EN VIVO ACTUALIZADO -->
-    <script src="https://paypal.com"></script>
-    
-    <!-- SCRIPT DE RENDERIZADO DEL BOTÓN EN VIVO -->
+    <!-- SCRIPT DE RENDERIZADO (SE EJECUTA CUANDO EL CUERPO YA EXISTE) -->
     <script>
-      paypal.HostedButtons({
-        hostedButtonId: "Q3BFSCX229V7G",
-      }).render("#paypal-container-Q3BFSCX229V7G")
+      if (window.paypal) {
+        window.paypal.HostedButtons({
+          hostedButtonId: "Q3BFSCX229V7G",
+        }).render("#paypal-container-Q3BFSCX229V7G");
+      } else {
+        console.log("Esperando credenciales activas de PayPal...");
+      }
     </script>
 
 </body>
 </html>
+
 
