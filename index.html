@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Finanzas Pro - Toma el control de tu dinero</title>
-    <!-- Estilos modernos y limpios -->
     <style>
         :root {
             --primary-color: #2ecc71; /* Verde éxito */
             --dark-color: #2c3e50;
             --light-bg: #f4f7f6;
+            --paypal-color: #003087;
+            --pse-color: #ff6b00;
         }
 
         body {
@@ -28,13 +29,13 @@
 
         .container {
             max-width: 600px;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .logo {
             width: 120px;
             height: 120px;
-            border-radius: 25px; /* Bordes redondeados estilo app */
+            border-radius: 25px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             margin-bottom: 20px;
             object-fit: cover;
@@ -53,25 +54,56 @@
             margin-bottom: 30px;
         }
 
-        .btn {
-            background-color: var(--primary-color);
+        /* Caja de Precios y Compra */
+        .pricing-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #7f8c8d;
+            font-weight: normal;
+        }
+
+        .btn-payment {
             color: white;
-            padding: 15px 35px;
+            padding: 15px 30px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 50px;
-            transition: transform 0.2s, background-color 0.2s;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+            transition: transform 0.2s, opacity 0.2s;
+            display: block;
+            margin: 15px 0;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .btn:hover {
-            background-color: #27ae60;
+        .btn-payment:hover {
             transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .btn-paypal {
+            background-color: var(--paypal-color);
+        }
+
+        .btn-pse {
+            background-color: var(--pse-color);
         }
 
         .features {
-            margin-top: 40px;
+            margin-top: 30px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
@@ -81,9 +113,9 @@
 
         .feature-item {
             background: white;
-            padding: 10px;
+            padding: 12px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
 
         .footer {
@@ -96,7 +128,6 @@
             text-decoration: none;
         }
 
-        /* Responsive para celulares */
         @media (max-width: 480px) {
             h1 { font-size: 2rem; }
             .features { grid-template-columns: 1fr; }
@@ -112,21 +143,32 @@
         <h1>Mi Finanzas Pro</h1>
         <p>La herramienta definitiva para organizar tus gastos, ahorrar más y alcanzar tus metas financieras con seguridad y privacidad.</p>
 
-        <a href="#" class="btn">Próximamente en Google Play</a>
+        <!-- Bloque de Venta Directa -->
+        <div class="pricing-box">
+            <div class="price">Adquiere la Versión Pro<br><span>Pago único (Acceso de por vida)</span></div>
+            
+            <!-- REEMPLAZA EL '#' POR TU LINK REAL DE PAYPAL -->
+            <a href="#" target="_blank" class="btn-payment btn-paypal">Pagar con PayPal (USD)</a>
+            
+            <!-- REEMPLAZA EL '#' POR TU LINK REAL DE EPAYCO/WOMPI (PSE) -->
+            <a href="#" target="_blank" class="btn-payment btn-pse">Pagar con PSE (Colombia)</a>
+            
+            <p style="font-size: 0.85rem; margin: 15px 0 0 0; color: #95a5a6;">🔒 Compra 100% segura. Tras el pago, recibirás el enlace de descarga directa del instalador APK.</p>
+        </div>
 
         <div class="features">
             <div class="feature-item">✅ Registro de gastos rápido</div>
             <div class="feature-item">📊 Gráficos inteligentes</div>
-            <div class="feature-item">🔒 Datos 100% privados</div>
-            <div class="feature-item">💰 Control de presupuestos</div>
+            <div class="feature-item">🔒 Datos 100% privados (Sin Nube)</div>
+            <div class="feature-item">💰 Control de presupuestos ilimitados</div>
         </div>
 
         <div class="footer">
             <p>
                 <a href="privacidad.html">Política de Privacidad</a> | 
-                <a href="mailto:mifinanzaspro@gmail.com">Soporte</a>
+                <a href="mailto:mifinanzaspro@gmail.com">Soporte técnico</a>
             </p>
-            <p>&copy; 2026 Mi Finanzas Pro. Hecho con ❤️ para tu bolsillo.</p>
+            <p>&copy; 2026 Mi Finanzas Pro. Distribución directa e independiente.</p>
         </div>
     </div>
 
