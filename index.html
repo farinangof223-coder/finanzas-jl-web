@@ -54,15 +54,20 @@
             margin-bottom: 30px;
         }
 
-        /* Marcador de Video y Multimedia */
-        .media-box {
-            background: #34495e;
-            color: white;
-            padding: 40px 20px;
+        /* NUEVA SECCIÓN DE VIDEO */
+        .video-box {
+            background: #000;
+            width: 100%;
+            aspect-ratio: 16 / 9;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             margin-bottom: 30px;
-            font-weight: bold;
+            overflow: hidden;
+        }
+        .video-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Caja de Precios y Compra */
@@ -120,7 +125,6 @@
             gap: 15px;
             font-size: 0.9rem;
             text-align: left;
-            margin-bottom: 30px;
         }
 
         .feature-item {
@@ -130,34 +134,34 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
 
-        /* Sección de Preguntas Frecuentes */
-        .faq-box {
+        /* NUEVA SECCIÓN DE PREGUNTAS FRECUENTES */
+        .faq-container {
             background: white;
             padding: 25px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             text-align: left;
-            margin-bottom: 40px;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
-
-        .faq-box h3 {
+        .faq-container h3 {
             margin-top: 0;
             border-bottom: 2px solid var(--light-bg);
             padding-bottom: 10px;
+            color: var(--dark-color);
         }
-
         .faq-item {
             margin-bottom: 15px;
         }
-
-        .faq-q {
+        .faq-title {
             font-weight: bold;
             margin-bottom: 5px;
+            color: var(--dark-color);
         }
-
-        .faq-a {
+        .faq-text {
             color: #7f8c8d;
             font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .footer {
@@ -185,12 +189,12 @@
         <h1>Mi Finanzas Pro</h1>
         <p>La herramienta definitiva para organizar tus gastos, ahorrar más y alcanzar tus metas financieras con seguridad y privacidad.</p>
 
-        <!-- SECCIÓN MULTIMEDIA COMPATIBLE Y ULTRAESTABLE -->
-        <div class="media-box">
-            📱 [Próximamente: Video Demostrativo e Imágenes de la App]
+        <!-- SECCIÓN DE VIDEO AGREGADA -->
+        <div class="video-box">
+            <iframe src="https://youtube.com" allowfullscreen></iframe>
         </div>
 
-        <!-- Bloque de Venta Directa (TUS BOTONES ORIGINALES EN FIRME) -->
+        <!-- Bloque de Venta Directa (TAL CUAL COMO LO TENÍAS CONFIGURADO) -->
         <div class="pricing-box">
             <div class="price">Adquiere la Versión Pro<br><span>Pago único (Acceso de por vida)</span></div>
             
@@ -204,22 +208,22 @@
         </div>
 
         <div class="features">
-            <div class="feature-item">✅ <strong>Registro Veloz:</strong> Registra movimientos diarios en segundos.</div>
-            <div class="feature-item">📊 <strong>Gráficos Claros:</strong> Analiza mensualmente tus categorías de gastos.</div>
-            <div class="feature-item">🔒 <strong>Privacidad:</strong> Tus datos financieros no salen de tu celular.</div>
-            <div class="feature-item">💰 <strong>Presupuestos:</strong> Controla tus metas de ahorro sin límites.</div>
+            <div class="feature-item">✅ Registro de gastos rápido</div>
+            <div class="feature-item">📊 Gráficos inteligentes</div>
+            <div class="feature-item">🔒 Datos 100% privados (Sin Nube)</div>
+            <div class="feature-item">💰 Control de presupuestos ilimitados</div>
         </div>
 
-        <!-- SECCIÓN DE PREGUNTAS FRECUENTES INMUNE A ERRORES -->
-        <div class="faq-box">
+        <!-- SECCIÓN DE PREGUNTAS FRECUENTES AGREGADA -->
+        <div class="faq-container">
             <h3>Preguntas Frecuentes</h3>
             <div class="faq-item">
-                <div class="faq-q">¿Cómo se instala la aplicación?</div>
-                <div class="faq-a">Al confirmar tu pago, se descargará un archivo oficial seguro en formato <strong>.APK</strong>. Solo ábrelo en tu Android y acepta la instalación directa.</div>
+                <div class="faq-title">¿Cómo se instala la aplicación?</div>
+                <div class="faq-text">Al confirmar tu pago, se descargará un archivo ejecutable seguro en formato <strong>.APK</strong>. Solo ábrelo en tu dispositivo Android y acepta los permisos de instalación directa.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">¿Es un único pago real?</div>
-                <div class="faq-a">Sí. Pagas una sola vez y usas el sistema completo de por vida, incluyendo actualizaciones futuras sin rentas mensuales.</div>
+                <div class="faq-title">¿Es un único pago para siempre?</div>
+                <div class="faq-text">Sí. Pagas una sola vez y tienes derecho a usar la aplicación de forma ilimitada para siempre, incluyendo todas las actualizaciones futuras de rendimiento.</div>
             </div>
         </div>
 
