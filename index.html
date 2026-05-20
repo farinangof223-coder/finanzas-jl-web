@@ -13,6 +13,8 @@
             --text-color: #5f6c7b;
             --light-bg: #f4f7f6;
             --white: #ffffff;
+            --gold: #f1c40f;
+            --orange: #ff9f43;
             --shadow: 0 15px 35px rgba(0,0,0,0.08);
         }
 
@@ -70,6 +72,20 @@
             font-size: 0.9rem;
         }
 
+        .promo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            color: #8a5a00;
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 20px rgba(241, 196, 15, 0.25);
+        }
+
         h1 {
             font-size: 3rem;
             line-height: 1.1;
@@ -100,12 +116,26 @@
             font-weight: 700;
             transition: 0.25s ease;
             text-align: center;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary {
             background: var(--primary-color);
             color: white;
             box-shadow: 0 8px 20px rgba(46, 204, 113, 0.35);
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #f1c40f, #ff9f43);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(255, 159, 67, 0.35);
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--primary-dark);
+            border: 2px solid rgba(46, 204, 113, 0.35);
         }
 
         .btn:hover {
@@ -158,6 +188,86 @@
 
         .section {
             margin: 45px 0;
+        }
+
+        .promo-section {
+            background: linear-gradient(135deg, #ffffff, #fff9e6);
+            border-radius: 30px;
+            padding: 38px;
+            box-shadow: var(--shadow);
+            border: 2px solid rgba(241, 196, 15, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-section::before {
+            content: "PREMIUM";
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: linear-gradient(135deg, #f1c40f, #ff9f43);
+            color: white;
+            font-weight: 900;
+            padding: 10px 50px;
+            transform: rotate(35deg);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .promo-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 12px 0;
+            color: var(--dark-color);
+        }
+
+        .promo-text {
+            color: var(--text-color);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .promo-highlight {
+            background: rgba(46, 204, 113, 0.10);
+            color: var(--primary-dark);
+            padding: 14px 18px;
+            border-radius: 16px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .premium-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .premium-item {
+            background: white;
+            padding: 15px 18px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .premium-item span {
+            color: var(--text-color);
+            font-weight: 400;
+            display: block;
+            margin-top: 3px;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         .features {
@@ -255,6 +365,14 @@
             .features {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .promo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .promo-section {
+                padding: 30px 22px;
+            }
         }
 
         @media (max-width: 520px) {
@@ -282,6 +400,14 @@
             .btn {
                 width: 100%;
             }
+
+            .promo-title {
+                font-size: 1.6rem;
+            }
+
+            .promo-section::before {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -296,6 +422,10 @@
 
                 <div class="badge">App de control financiero personal</div>
 
+                <div class="promo-badge">
+                    🎁 Primeros 30 días Premium gratis
+                </div>
+
                 <h1>Organiza tu dinero de forma simple y segura</h1>
 
                 <p class="subtitle">
@@ -306,6 +436,10 @@
                 <div class="hero-actions">
                     <a href="#descargar" class="btn btn-primary">
                         Descargar app
+                    </a>
+
+                    <a href="#premium" class="btn btn-premium">
+                        Ver promoción Premium
                     </a>
                 </div>
 
@@ -345,6 +479,83 @@
             </div>
         </section>
 
+        <section class="section" id="premium">
+            <div class="promo-section">
+                <div class="promo-grid">
+                    <div>
+                        <div class="promo-badge">
+                            ⭐ Promoción especial de lanzamiento
+                        </div>
+
+                        <h2 class="promo-title">
+                            Activa las funciones Premium durante tus primeros 30 días
+                        </h2>
+
+                        <p class="promo-text">
+                            Prueba Finanzas JL con acceso Premium y aprovecha herramientas avanzadas
+                            para controlar mejor tus gastos, presupuestos y metas personales.
+                        </p>
+
+                        <div class="promo-highlight">
+                            🎁 Los primeros 30 días tendrás acceso a funciones Premium sin costo adicional.
+                        </div>
+
+                        <div class="hero-actions">
+                            <a href="https://farinangof223-coder.github.io/farinangof223-coder-mi-finanzas-pro-v3/" class="btn btn-premium" target="_blank" rel="noopener">
+                                Probar Premium 30 días
+                            </a>
+
+                            <a href="#descargar" class="btn btn-outline">
+                                Abrir app web
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="premium-list">
+                        <div class="premium-item">
+                            📊
+                            <div>
+                                Gráficos financieros avanzados
+                                <span>Visualiza tus gastos, ingresos y evolución mensual de forma clara.</span>
+                            </div>
+                        </div>
+
+                        <div class="premium-item">
+                            💰
+                            <div>
+                                Control completo de presupuestos
+                                <span>Crea límites por categoría y revisa cuánto te queda disponible.</span>
+                            </div>
+                        </div>
+
+                        <div class="premium-item">
+                            🎯
+                            <div>
+                                Metas financieras personales
+                                <span>Organiza objetivos de ahorro y controla tu progreso.</span>
+                            </div>
+                        </div>
+
+                        <div class="premium-item">
+                            📁
+                            <div>
+                                Reportes y resumen mensual
+                                <span>Consulta un resumen más completo de tus movimientos financieros.</span>
+                            </div>
+                        </div>
+
+                        <div class="premium-item">
+                            🔒
+                            <div>
+                                Mayor privacidad y control
+                                <span>Administra tu información de manera sencilla desde tu dispositivo.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="features">
                 <div class="feature-item">
@@ -373,7 +584,7 @@
             <div class="download-title">Pantalla de descarga</div>
 
             <p class="download-subtitle">
-                Estás a un paso de instalar Finanzas JL. Presiona el botón para descargar el APK en tu dispositivo Android.
+                Estás a un paso de usar Finanzas JL. Abre la app web y activa la promoción de los primeros 30 días Premium.
             </p>
 
             <a href="https://farinangof223-coder.github.io/farinangof223-coder-mi-finanzas-pro-v3/" class="btn btn-primary" target="_blank" rel="noopener">
