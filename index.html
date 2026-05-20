@@ -105,7 +105,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
-            margin-bottom: 25px;
+            margin-bottom: 18px;
         }
 
         .btn {
@@ -138,8 +138,27 @@
         }
 
         .trust-text {
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .user-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--dark-color);
+            padding: 10px 16px;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .user-counter strong {
+            color: var(--primary-dark);
         }
 
         .video-card {
@@ -308,7 +327,7 @@
 
         .download-subtitle {
             color: var(--text-color);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .security-message {
@@ -402,6 +421,12 @@
             .promo-section::before {
                 display: none;
             }
+
+            .user-counter {
+                width: 100%;
+                justify-content: center;
+                border-radius: 18px;
+            }
         }
     </style>
 </head>
@@ -431,6 +456,10 @@
                     <a href="https://farinangof223-coder.github.io/farinangof223-coder-mi-finanzas-pro-v3/" class="btn btn-premium" target="_blank" rel="noopener">
                         Probar gratis 30 días Premium
                     </a>
+                </div>
+
+                <div class="user-counter">
+                    👥 <strong>+100 usuarios</strong> han probado Finanzas JL
                 </div>
 
                 <p class="trust-text">
@@ -570,6 +599,12 @@
             <p class="download-subtitle">
                 Abre la app web desde tu celular y prueba las funciones Premium durante los primeros 30 días.
             </p>
+
+            <div class="user-counter">
+                👥 <strong>+100 usuarios</strong> ya han probado la app
+            </div>
+
+            <br>
 
             <a href="https://farinangof223-coder.github.io/farinangof223-coder-mi-finanzas-pro-v3/" class="btn btn-primary" target="_blank" rel="noopener">
                 Abrir Finanzas JL
