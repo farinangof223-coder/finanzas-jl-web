@@ -132,6 +132,13 @@
             box-shadow: 0 8px 20px rgba(255, 159, 67, 0.35);
         }
 
+        .btn-outline {
+            background: white;
+            color: var(--primary-dark);
+            border: 2px solid rgba(46, 204, 113, 0.35);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
         .btn:hover {
             transform: translateY(-3px);
             opacity: 0.92;
@@ -309,6 +316,37 @@
             line-height: 1.5;
         }
 
+        .manual-box {
+            background: white;
+            padding: 35px;
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .manual-box h2 {
+            font-size: 2rem;
+            margin: 0 0 12px 0;
+            color: var(--dark-color);
+        }
+
+        .manual-box p {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0 auto 22px auto;
+            max-width: 620px;
+        }
+
+        .manual-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 18px;
+        }
+
         .download-box {
             background: white;
             padding: 35px;
@@ -406,7 +444,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .download-box {
+            .download-box,
+            .manual-box {
                 padding: 25px 18px;
             }
 
@@ -426,6 +465,10 @@
                 width: 100%;
                 justify-content: center;
                 border-radius: 18px;
+            }
+
+            .manual-box h2 {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -453,8 +496,12 @@
                 </p>
 
                 <div class="hero-actions">
-                    <a href="  https://farinangof223-coder.github.io/farinangof223-coder-finanzasjl-v2/" class="btn btn-premium" target="_blank" rel="noopener">
+                    <a href="https://farinangof223-coder.github.io/farinangof223-coder-finanzasjl-v2/" class="btn btn-premium" target="_blank" rel="noopener">
                         Probar gratis 30 días Premium
+                    </a>
+
+                    <a href="manual/manual-finanzas-jl.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+                        Ver manual de uso
                     </a>
                 </div>
 
@@ -593,6 +640,28 @@
             </div>
         </section>
 
+        <section class="section" id="manual">
+            <div class="manual-box">
+                <h2>Manual de uso de Finanzas JL</h2>
+
+                <p>
+                    Consulta el manual paso a paso para aprender cómo usar la aplicación,
+                    registrar tus movimientos, revisar el historial, controlar presupuestos
+                    y agregar la app a la pantalla de inicio de tu celular.
+                </p>
+
+                <div class="manual-actions">
+                    <a href="manual/manual-finanzas-jl.pdf" class="btn btn-premium" target="_blank" rel="noopener">
+                        Descargar manual de uso
+                    </a>
+
+                    <a href="https://farinangof223-coder.github.io/farinangof223-coder-finanzasjl-v2/" class="btn btn-outline" target="_blank" rel="noopener">
+                        Abrir la aplicación
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <section class="download-box" id="descargar">
             <div class="download-title">Empieza a usar Finanzas JL</div>
 
@@ -606,8 +675,14 @@
 
             <br>
 
-            <a href="  https://farinangof223-coder.github.io/farinangof223-coder-finanzasjl-v2/" class="btn btn-primary" target="_blank" rel="noopener">
+            <a href="https://farinangof223-coder.github.io/farinangof223-coder-finanzasjl-v2/" class="btn btn-primary" target="_blank" rel="noopener">
                 Abrir Finanzas JL
+            </a>
+
+            <br><br>
+
+            <a href="manual/manual-finanzas-jl.pdf" class="btn btn-premium" target="_blank" rel="noopener">
+                Ver manual de uso
             </a>
 
             <p class="security-message">
